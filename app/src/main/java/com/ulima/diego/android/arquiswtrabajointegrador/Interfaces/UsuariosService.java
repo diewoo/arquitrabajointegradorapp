@@ -1,7 +1,8 @@
 package com.ulima.diego.android.arquiswtrabajointegrador.Interfaces;
 
-import com.ulima.diego.android.arquiswtrabajointegrador.beans.Consumo;
+import com.ulima.diego.android.arquiswtrabajointegrador.beans.Consumos;
 import com.ulima.diego.android.arquiswtrabajointegrador.beans.Respuesta;
+import com.ulima.diego.android.arquiswtrabajointegrador.beans.RespuestaConsumoUsuario;
 import com.ulima.diego.android.arquiswtrabajointegrador.beans.Usuario;
 
 import retrofit2.Call;
@@ -17,8 +18,9 @@ public interface UsuariosService {
 
     @POST("/usuario/login")
     Call<Respuesta> login(@Body Usuario usuario);
-    @GET("/api/consumosusuarios")
-    Call<Consumo> getConsumos();
+    @POST("/api/consumos")
+    Call<Respuesta> validarClienteyagregarConsumo(@Body Consumos consumos);
+
 
 
 

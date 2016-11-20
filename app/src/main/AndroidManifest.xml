@@ -23,6 +23,12 @@
             android:configChanges="screenSize|orientation">
         </activity>
         <activity
+            android:name=".dashboard_activity"
+            android:label="Luz del Sur "
+            android:configChanges="screenSize|orientation">
+        </activity>
+
+        <activity
             android:name=".registro_activity"
             android:label="Luz del Sur "
             android:configChanges="screenSize|orientation">

@@ -3,50 +3,42 @@ package com.ulima.diego.android.arquiswtrabajointegrador.beans;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by Diego Renteria on 17/11/2016.
+ * Created by Diego Renteria on 20/11/2016.
  */
 
 public class Consumo {
-    @SerializedName("usuario")
+
+    @SerializedName("fechamedicion")
     @Expose
-    private String usuario;
-    @SerializedName("nroSuministro")
+    private String fecha;
+    @SerializedName("consumo")
     @Expose
-    private String nroSuministro;
-    @SerializedName("consumos")
-    @Expose
-    private List<Consumo> consumos = new ArrayList<Consumo>();
+    private Float consumo;
 
-    public String getUsuario() {
-        return usuario;
+    public Consumo() {
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public Consumo(String fecha, Float consumo) {
+        this.fecha = fecha;
+        this.consumo = consumo;
     }
 
-    public String getNroSuministro() {
-        return nroSuministro;
+    public String getFecha() {
+        return fecha;
     }
 
-
-    public void setNroSuministro(String nroSuministro) {
-        this.nroSuministro = nroSuministro;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public List<Consumo> getConsumos() {
-        return consumos;
+    public Float getConsumo() {
+        return consumo;
     }
 
-    public void setConsumos(List<Consumo> consumos) {
-        this.consumos = consumos;
+    public void setConsumo(Float consumo) {
+        this.consumo = consumo;
     }
-
 }
-
 
 

@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                         .setContentText("Campos vacios, revisar!")
                         .show();
             }else {
-            conexion conexion=new conexion();
+                conexion conexion=new conexion();
                 Retrofit retrofit = conexion.getConexion();
                 UsuariosService usuariosService = retrofit.create(UsuariosService.class);
                 Usuario usuario=new Usuario();
@@ -73,15 +73,15 @@ public class LoginActivity extends AppCompatActivity {
                          int status=response.code();
                          if(resultado.getStatus().getCod()==1){
                           // userid = resultado.getUser().getId();
-                             Intent intent= new Intent(LoginActivity.this,registro_activity.class);
-                              intent.putExtra("username",id);
+                             Intent intent= new Intent(LoginActivity.this,dashboard_activity.class);
+                          //    intent.putExtra("username",id);
                           //   Log.i("LOGUEARSE.COM","id"+resultado.getStatus().getCod());
                              startActivity(intent);
 
                          }else{
                              new SweetAlertDialog(LoginActivity.this)
                                      .setTitleText("Alerta!")
-                                     .setContentText(resultado.getStatus().getCod().toString()+
+                                     .setContentText(
                                              resultado.getStatus().getMsg().toString())
                                      .show();
                          }
