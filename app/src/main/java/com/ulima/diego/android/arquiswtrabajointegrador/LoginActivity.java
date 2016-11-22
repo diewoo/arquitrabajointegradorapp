@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                          int status=response.code();
                          if(resultado.getStatus().getCod()==1){
                           // userid = resultado.getUser().getId();
-                             Intent intent= new Intent(LoginActivity.this,dashboard_activity.class);
+                             Intent intent= new Intent(LoginActivity.this,registro_activity.class);
                           //    intent.putExtra("username",id);
                           //   Log.i("LOGUEARSE.COM","id"+resultado.getStatus().getCod());
                              startActivity(intent);
