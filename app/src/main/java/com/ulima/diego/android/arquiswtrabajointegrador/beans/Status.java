@@ -14,6 +14,12 @@ public class Status {
     @SerializedName("msg")
     @Expose
     private String msg;
+    @SerializedName("nrosuministro")
+    @Expose
+    private String nrosuministro;
+    @SerializedName("nombre")
+    @Expose
+    private String nombre;
 
 
     public Status() {
@@ -34,5 +40,21 @@ public class Status {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getNrosuministro() {
+        return nrosuministro;
+    }
+
+    public void setNrosuministro(String nrosuministro) {
+        this.nrosuministro = nrosuministro;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

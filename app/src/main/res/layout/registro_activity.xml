@@ -26,31 +26,6 @@
             android:textAlignment="center"
             android:maxLines="1"
             android:maxLength="200"/>
-        <EditText
-            android:id="@+id/etefecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/eteSuministro"
-            android:hint="Fecha"
-            android:inputType="datetime"
-            android:layout_marginBottom="5sp"
-            android:layout_marginTop="5sp"
-            android:textAlignment="center"
-            android:maxLines="1"
-            android:maxLength="30"
-            />
-        <EditText
-            android:id="@+id/eteconsumo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/etefecha"
-            android:hint="Consumo"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="5sp"
-            android:layout_marginTop="5sp"
-            android:textAlignment="center"
-            android:maxLines="1"
-            android:maxLength="20"/>
 
     </RelativeLayout>
     <android.support.design.widget.FloatingActionButton
@@ -61,7 +36,7 @@
         android:elevation="10dp"
         app:fabSize="normal"
         android:tint="@color/button_text_color"
-        app:srcCompat="@android:drawable/ic_input_add"
+        app:srcCompat="@android:drawable/ic_menu_search"
 
     />
 

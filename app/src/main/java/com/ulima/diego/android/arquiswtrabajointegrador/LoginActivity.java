@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ulima.diego.android.arquiswtrabajointegrador.Conexion.conexion;
 import com.ulima.diego.android.arquiswtrabajointegrador.Interfaces.UsuariosService;
@@ -72,11 +73,14 @@ public class LoginActivity extends AppCompatActivity {
                          Respuesta resultado=response.body();
                          int status=response.code();
                          if(resultado.getStatus().getCod()==1){
-                          // userid = resultado.getUser().getId();
-                             Intent intent= new Intent(LoginActivity.this,registro_activity.class);
-                          //    intent.putExtra("username",id);
-                          //   Log.i("LOGUEARSE.COM","id"+resultado.getStatus().getCod());
-                             startActivity(intent);
+
+                                // userid = resultado.getUser().getId();
+                                 Intent intent= new Intent(LoginActivity.this,registro_activity.class);
+                                 //    intent.putExtra("username",id);
+                                 //   Log.i("LOGUEARSE.COM","id"+resultado.getStatus().getCod());
+                                 startActivity(intent);
+
+                          //
 
                          }else{
                              new SweetAlertDialog(LoginActivity.this)
@@ -91,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
                      @Override
                      public void onFailure(Call<Respuesta> call, Throwable t) {
+                         Toast.makeText(LoginActivity.this, "Hubo un error en la conexión", Toast.LENGTH_SHORT).show();
 
                      }
                  });

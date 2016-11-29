@@ -17,6 +17,10 @@ import com.ulima.diego.android.arquiswtrabajointegrador.beans.Consumos;
 import com.ulima.diego.android.arquiswtrabajointegrador.beans.Respuesta;
 import com.ulima.diego.android.arquiswtrabajointegrador.beans.RespuestaConsumoUsuario;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,8 +33,6 @@ import retrofit2.Retrofit;
 
 public class registro_activity extends AppCompatActivity {
     EditText eteSuministro;
-    EditText eteFecha;
-    EditText eteConsumo;
     FloatingActionButton butGuardar;
 
 
@@ -40,16 +42,17 @@ public class registro_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro_activity);
         eteSuministro=(EditText)findViewById(R.id.eteSuministro);
-        eteFecha=(EditText)findViewById(R.id.etefecha);
-        eteConsumo=(EditText)findViewById(R.id.eteconsumo);
         butGuardar=(FloatingActionButton)findViewById(R.id.butGuardar);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd ");
+        Date date = new Date();
+
+
+        final String strLong = dateFormat.format(date);
 
         butGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(eteSuministro.getText().toString().equalsIgnoreCase("")||
-                   eteFecha.getText().toString().equalsIgnoreCase("")||
-                    eteConsumo.getText().toString().equalsIgnoreCase("")){
+                if(eteSuministro.getText().toString().equalsIgnoreCase("")){
                     new SweetAlertDialog(registro_activity.this)
                             .setTitleText("Alerta!")
                             .setContentText("Campos vacios, revisar!")
@@ -60,8 +63,6 @@ public class registro_activity extends AppCompatActivity {
                     UsuariosService usuariosService = retrofit.create(UsuariosService.class);
 
                     Consumos consumos=new Consumos();
-                    consumos.setConsumo(eteConsumo.getText().toString());
-                    consumos.setFecha(eteFecha.getText().toString());
                     consumos.setNroSuministro(eteSuministro.getText().toString());
 
 
@@ -72,10 +73,14 @@ public class registro_activity extends AppCompatActivity {
                             int status = response.code();
                             Respuesta respuesta = response.body();
                             if (respuesta.getStatus().getCod() == 1) {
-                                new SweetAlertDialog(registro_activity.this)
-                                        .setTitleText("Alerta!")
-                                        .setContentText(respuesta.getStatus().getMsg().toString())
-                                        .show();
+                                Toast.makeText(registro_activity.this, respuesta.getStatus().getMsg(), Toast.LENGTH_SHORT).show();
+
+                                Intent intent= new Intent(registro_activity.this,encolarActivity.class);
+                                   intent.putExtra("fecha",strLong);
+                                    intent.putExtra("nombre",respuesta.getStatus().getNombre());
+                                intent.putExtra("nrosuministro",respuesta.getStatus().getNrosuministro());
+                                //   Log.i("LOGUEARSE.COM","id"+resultado.getStatus().getCod());
+                                startActivity(intent);
 
 
                             } else {

@@ -18,8 +18,10 @@ public interface UsuariosService {
 
     @POST("/usuario/login")
     Call<Respuesta> login(@Body Usuario usuario);
-    @POST("/api/consumos")
+    @POST("/usuario/consumos")
     Call<Respuesta> validarClienteyagregarConsumo(@Body Consumos consumos);
+    @POST("/usuario/cola")
+    Call<Respuesta> encolarConsumo(@Body Consumos consumos);
 
 
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="16dp"
+              android:background="#c3c3c3"
+
+            >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="nombre  "
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="text"
+
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:maxLength="200"/>
+        <EditText
+            android:id="@+id/consumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=" Consumo "
+            android:layout_below="@id/nombre"
+            android:inputType="text"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:maxLength="200"/>
+
+        <EditText
+            android:id="@+id/fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="fecha  "
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="text"
+            android:layout_below="@id/consumo"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:maxLength="200"/>
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/butGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:elevation="10dp"
+        app:fabSize="normal"
+        android:tint="@color/button_text_color"
+        app:srcCompat="@android:drawable/ic_input_add"
+
+        />
+
+</android.support.design.widget.CoordinatorLayout>

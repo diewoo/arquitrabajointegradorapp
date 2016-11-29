@@ -8,9 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Usuario {
-    @SerializedName("id")
-    @Expose
-    private String id;
+
     @SerializedName("username")
     @Expose
     private String username;
@@ -19,16 +17,8 @@ public class Usuario {
     private String password;
     @SerializedName("tipo")
     @Expose
-    private String tipo;
+    private int tipo;
 
-    public String getId() {
-        return id;
-    }
-
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -48,12 +38,12 @@ public class Usuario {
     }
 
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
 
-    public void setTipo(String tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 }

@@ -33,6 +33,11 @@
             android:label="Luz del Sur "
             android:configChanges="screenSize|orientation">
         </activity>
+        <activity
+            android:name=".encolarActivity"
+            android:label="Luz del Sur "
+            android:configChanges="screenSize|orientation">
+        </activity>
     </application>
 
 </manifest>
